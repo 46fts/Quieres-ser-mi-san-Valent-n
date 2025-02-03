@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>¿Serás mi San Valentín?</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            background: url('https://source.unsplash.com/1600x900/?love,couple') no-repeat center center/cover;
+            color: white;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+        .container {
+            background: rgba(0, 0, 0, 0.6);
+            padding: 20px;
+            border-radius: 10px;
+        }
+        h1 {
+            font-size: 2em;
+        }
+        .buttons {
+            margin-top: 20px;
+            position: relative; /* Contenedor con posición relativa */
+        }
+        button {
+            font-size: 1.2em;
+            padding: 10px 20px;
+            border: none;
+            cursor: pointer;
+            margin: 10px;
+            border-radius: 5px;
+        }
+        #yes {
+            background-color: green;
+            color: white;
+        }
+        #no {
+            background-color: red;
+            color: white;
+            position: absolute; /* Mantener el botón "No" dentro de .buttons */
+        }
+        #heart {
+            font-size: 3em;
+            display: none;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Desde que entraste en mi vida, cada día es más bonito. 💖</h1>
+        <h2>Hoy quiero preguntarte... ¿Quieres ser mi San Valentín?</h2>
+        <div class="buttons">
+            <button id="yes" onclick="showHeart()">Sí 💚</button>
+            <button id="no" onmouseover="moveNo()">No ❌</button>
+        </div>
+        <div id="heart">❤️❤️❤️</div>
+    </div>
+
+    <script>
+        function showHeart() {
+            document.getElementById("heart").style.display = "block";
+        }
+
+        function moveNo() {
+            let button = document.getElementById("no");
+            let x = Math.random() * window.innerWidth * 0.6;
+            let y = Math.random() * window.innerHeight * 0.6;
+            button.style.left = x + "px";
+            button.style.top = y + "px";
+        }
+    </script>
+</body>
+</html>
